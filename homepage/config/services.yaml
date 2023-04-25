@@ -1,0 +1,117 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/en/configs/services
+
+- Hypervisors:
+    - Proxmox:
+        href: https://proxmox.imkumpy.in/
+        widget:
+            type: proxmox
+            url: https://proxmox.imkumpy.in
+            username: $PROXMOX_USER
+            password: $PROXMOX_PASS
+
+    - Proxmox-Backup:
+        href: https://proxmox-backup.imkumpy.in:8007/
+
+    - Unraid:
+        href: http://unraid.imkumpy.in/
+
+- Dockerhost:
+    - Caddy:
+        description: Reverse Proxy
+        server: my-docker
+        container: caddy
+
+- General Services:
+    - Syncthing Server:
+        href: https://syncthing.imkumpy.in:8384/
+    - Zabbix:
+        href: http://zabbix.imkumpy.in/zabbix/
+    - GitLab:
+        href: https://git.imkumpy.in/
+    - ArgoCD:
+        href: https://argocd.imkumpy.in/
+    - Grafana:
+        href: https://grafana.imkumpy.in/
+    - Alertmanager:
+        href: https://alertmanager.imkumpy.in/
+
+- Media Management:
+    - Plex:
+        href: http://unraid.imkumpy.in:32400/
+        widget:
+          type: plex
+          url: http://unraid.imkumpy.in:32400
+          key: $PLEX_TOKEN
+    - Overseerr:
+        href: https://requests.imkumpy.com/
+        widget:
+          type: overseerr
+          url: http://unraid.imkumpy.in:5055
+          key: $OVERSEERR_TOKEN
+    - Sonarr:
+        href: http://unraid.imkumpy.in:8989/
+        widget:
+          type: sonarr
+          url: http://unraid.imkumpy.in:8989
+          key: $SONARR_TOKEN
+    - Radarr:
+        href: http://unraid.imkumpy.in:7878/
+        widget:
+          type: radarr
+          url: http://unraid.imkumpy.in:7878
+          key: $RADARR_TOKEN
+    - Lidarr:
+        href: http://unraid.imkumpy.in:8686/
+        widget:
+          type: lidarr
+          url: http://unraid.imkumpy.in:8686
+          key: $LIDARR_TOKEN
+    - Prowlarr:
+        href: http://unraid.imkumpy.in:9696/
+        widget:
+          type: prowlarr
+          url: http://unraid.imkumpy.in:9696
+          key: $PROWLARR_TOKEN
+    - qBittorrent:
+        href: http://unraid.imkumpy.in:8080/
+        widget:
+          type: qbittorrent
+          url: http://unraid.imkumpy.in:8080
+          username: $QBITTORRENT_USER
+          password: $QBITTORRENT_PASS
+    - SABnzbd:
+        href: http://192.168.0.104:8081/
+        widget:
+          type: sabnzbd
+          url: http://192.168.0.104:8081
+          key: $SABNZBD_TOKEN
+
+- Network:
+    - Omada:
+        href: https://omada.imkumpy.in/
+        widget:
+            type: omada
+            url: https://omada.imkumpy.in
+            username: $OMADA_USER
+            password: $OMADA_PASS
+            site: Default
+    - PiHole (Active VIP):
+        href: http://pihole.imkumpy.in/admin/
+        widget:
+          type: pihole
+          url: http://pihole.imkumpy.in
+          key: $PIHOLE_TOKEN
+    - PiHole (ns1):
+        href: http://ns1.imkumpy.in/admin/
+        widget:
+          type: pihole
+          url: http://ns1.imkumpy.in
+          key: $PIHOLE_TOKEN
+    - PiHole (ns2):
+        href: http://ns2.imkumpy.in/admin/
+        widget:
+          type: pihole
+          url: http://ns2.imkumpy.in
+          key: $PIHOLE_TOKEN

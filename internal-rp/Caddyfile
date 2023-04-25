@@ -1,0 +1,61 @@
+{
+	acme_dns cloudflare {$CLOUDFLARE_API_TOKEN}
+}
+
+alertmanager.imkumpy.in {
+	reverse_proxy k3s-ingress.imkumpy.in:443 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+git.imkumpy.in {
+	reverse_proxy gitlab.imkumpy.in:443 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+grafana.imkumpy.in {
+	reverse_proxy k3s-ingress.imkumpy.in:443 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+homepage.imkumpy.in {
+	reverse_proxy dockerhost.imkumpy.in:3000
+}
+
+omada.imkumpy.in {
+	reverse_proxy 192.168.0.95:8043 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+		header_up Host {host}:8043
+		header_down Location :8043 :443
+	}
+}
+
+plex.imkumpy.in {
+	reverse_proxy unraid.imkumpy.in:32400 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+proxmox.imkumpy.in {
+	reverse_proxy 192.168.0.100:8006 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
+
+panel.imkumpy.in {
+	reverse_proxy pterodactyl.imkumpy.in:80
+}

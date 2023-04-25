@@ -1,0 +1,24 @@
+---
+version: "3.7"
+networks:
+  default:
+    name: 'proxy_network'
+services:
+  caddy:
+    image: slothcroissant/caddy-cloudflaredns:2.6.2
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./site:/srv
+      - ./data:/data
+      - ./config:/config
+    environment:
+      - ACME_AGREE=true
+      - CLOUDFLARE_EMAIL=garrett@garrettleber.com
+      - CADDY_INGRESS_NETWORKS=proxy_network
