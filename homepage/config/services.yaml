@@ -8,8 +8,8 @@
         widget:
             type: proxmox
             url: https://proxmox.imkumpy.in
-            username: $PROXMOX_USER
-            password: $PROXMOX_PASS
+            username: "{{ HOMEPAGE_VAR_PROXMOX_USER}}"
+            password: "{{ HOMEPAGE_VAR_PROXMOX_PASS }}"
 
     - Proxmox-Backup:
         href: https://proxmox-backup.imkumpy.in:8007/
@@ -43,50 +43,50 @@
         widget:
           type: plex
           url: http://unraid.imkumpy.in:32400
-          key: $PLEX_TOKEN
+          key: "{{ HOMEPAGE_VAR_PLEX_TOKEN }}"
     - Overseerr:
         href: https://requests.imkumpy.com/
         widget:
           type: overseerr
           url: http://unraid.imkumpy.in:5055
-          key: $OVERSEERR_TOKEN
+          key: "{{ HOMEPAGE_VAR_OVERSEERR_TOKEN }}"
     - Sonarr:
         href: http://unraid.imkumpy.in:8989/
         widget:
           type: sonarr
           url: http://unraid.imkumpy.in:8989
-          key: $SONARR_TOKEN
+          key: "{{ HOMEPAGE_VAR_SONARR_TOKEN }}"
     - Radarr:
         href: http://unraid.imkumpy.in:7878/
         widget:
           type: radarr
           url: http://unraid.imkumpy.in:7878
-          key: $RADARR_TOKEN
+          key: "{{ HOMEPAGE_VAR_RADARR_TOKEN }}"
     - Lidarr:
         href: http://unraid.imkumpy.in:8686/
         widget:
           type: lidarr
           url: http://unraid.imkumpy.in:8686
-          key: $LIDARR_TOKEN
+          key: "{{ HOMEPAGE_VAR_LIDARR_TOKEN }}"
     - Prowlarr:
         href: http://unraid.imkumpy.in:9696/
         widget:
           type: prowlarr
           url: http://unraid.imkumpy.in:9696
-          key: $PROWLARR_TOKEN
+          key: "{{ HOMEPAGE_VAR_PROWLARR_TOKEN }}"
     - qBittorrent:
         href: http://unraid.imkumpy.in:8080/
         widget:
           type: qbittorrent
           url: http://unraid.imkumpy.in:8080
-          username: $QBITTORRENT_USER
-          password: $QBITTORRENT_PASS
+          username: "{{ HOMEPAGE_VAR_QBITTORRENT_USER }}"
+          password: "{{ HOMEPAGE_VAR_QBITTORRENT_PASS }}"
     - SABnzbd:
         href: http://192.168.0.104:8081/
         widget:
           type: sabnzbd
           url: http://192.168.0.104:8081
-          key: $SABNZBD_TOKEN
+          key: "{{ HOMEPAGE_VAR_SABNZBD_TOKEN }}"
 
 - Network:
     - Omada:
@@ -94,24 +94,24 @@
         widget:
             type: omada
             url: https://omada.imkumpy.in
-            username: $OMADA_USER
-            password: $OMADA_PASS
+            username: "{{ HOMEPAGE_VAR_OMADA_USER }}"
+            password: "{{ HOMEPAGE_VAR_OMADA_PASS }}"
             site: Default
     - PiHole (Active VIP):
         href: http://pihole.imkumpy.in/admin/
         widget:
           type: pihole
           url: http://pihole.imkumpy.in
-          key: $PIHOLE_TOKEN
+          key: "{{ HOMEPAGE_VAR_PIHOLE_TOKEN }}"
     - PiHole (ns1):
         href: http://ns1.imkumpy.in/admin/
         widget:
           type: pihole
           url: http://ns1.imkumpy.in
-          key: $PIHOLE_TOKEN
+          key: "{{ HOMEPAGE_VAR_PIHOLE_TOKEN }}"
     - PiHole (ns2):
         href: http://ns2.imkumpy.in/admin/
         widget:
           type: pihole
           url: http://ns2.imkumpy.in
-          key: $PIHOLE_TOKEN
+          key: "{{ HOMEPAGE_VAR_PIHOLE_TOKEN }}"
