@@ -13,3 +13,18 @@ services:
       - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro # (optional) For docker integrations
     restart: always
+    environment:
+      - PROXMOX_PASS=${PROXMOX_PASS}
+      - PROXMOX_USER=${PROXMOX_USER}
+      - PLEX_TOKEN=${PLEX_TOKEN}
+      - OVERSEERR_TOKEN=${OVERSEERR_TOKEN}
+      - SONARR_TOKEN=${SONARR_TOKEN}
+      - RADARR_TOKEN=${RADARR_TOKEN}
+      - LIDARR_TOKEN=${LIDARR_TOKEN}
+      - PROWLARR_TOKEN=${PROWLARR_TOKEN}
+      - QBITTORRENT_USER=${QBITTORRENT_USER}
+      - QBITTORRENT_PASS=${QBITTORRENT_PASS}
+      - SABNZBD_TOKEN=${SABNZBD_TOKEN}
+      - OMADA_USER=${OMADA_USER}
+      - OMADA_PASS=${OMADA_PASS}
+      - PIHOLE_TOKEN=${PIHOLE_TOKEN}
