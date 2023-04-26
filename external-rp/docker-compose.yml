@@ -21,4 +21,5 @@ services:
     environment:
       - ACME_AGREE=true
       - CLOUDFLARE_EMAIL=garrett@garrettleber.com
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
       - CADDY_INGRESS_NETWORKS=proxy_network
