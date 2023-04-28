@@ -13,7 +13,7 @@ services:
       TS3SERVER_DB_SQLCREATEPATH: create_postgresql
       TS3SERVER_DB_HOST: 192.168.0.90 # postgres.imkumpy.in
       TS3SERVER_DB_PORT: '5432'
-      TS3SERVER_DB_USER: root
+      TS3SERVER_DB_USER: teamspeak
       TS3SERVER_DB_PASSWORD: ${TS3SERVER_DB_PASSWORD}
       TS3SERVER_DB_NAME: teamspeak
       TS3SERVER_DB_WAITUNTILREADY: 30
