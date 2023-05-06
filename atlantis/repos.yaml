@@ -1,0 +1,5 @@
+# repos.yaml
+# Allow repos to override the workflow key.
+repos:
+- id: /.*/
+  allowed_overrides: [workflow]

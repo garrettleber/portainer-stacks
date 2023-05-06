@@ -7,6 +7,8 @@ services:
     restart: unless-stopped
     ports:
       - "4141:4141"
+    volumes:
+      - ./repos.yaml:/config/repos.yaml
     command:
       - server
       - --gitlab-hostname=${ATLANTIS_GITLAB_HOSTNAME}
@@ -16,7 +18,7 @@ services:
       - --repo-allowlist=${ATLANTIS_REPO_ALLOWLIST}
       - --atlantis-url=${ATLANTIS_ATLANTIS_URL}
       #- --log-level=debug
-      #- --repo-config-json=/config/repo-config.json
+      - --repo-config=/config/repos.yaml
     environment:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
