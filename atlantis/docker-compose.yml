@@ -17,3 +17,11 @@ services:
       - --atlantis-url=${ATLANTIS_ATLANTIS_URL}
       #- --log-level=debug
       #- --repo-config-json=/config/repo-config.json
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+      - PM_USER=${PM_USER}
+      - PM_PASS=${PM_PASS}
+      - TF_VAR_pihole_password=${TF_VAR_pihole_password}
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
