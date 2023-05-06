@@ -15,5 +15,5 @@ services:
       - --gitlab-webhook-secret=${ATLANTIS_GITLAB_WEBHOOK_SECRET}
       - --repo-allowlist=${ATLANTIS_REPO_ALLOWLIST}
       - --atlantis-url=${ATLANTIS_ATLANTIS_URL}
-      - --log-level=debug
+      #- --log-level=debug
       #- --repo-config-json=/config/repo-config.json
