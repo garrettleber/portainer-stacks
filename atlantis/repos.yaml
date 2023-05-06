@@ -9,3 +9,18 @@ repos:
   # By setting allow_custom_workflows to true, we allow repos to also
   # define their own workflows.
   allow_custom_workflows: true
+
+workflows:
+  default:
+    plan:
+      steps:
+      - env:
+          name: TERRAGRUNT_TFPATH
+          command: 'echo "terraform${ATLANTIS_TERRAFORM_VERSION}"'
+      - run: terragrunt plan -out $PLANFILE
+    apply:
+      steps:
+      - env:
+          name: TERRAGRUNT_TFPATH
+          command: 'echo "terraform${ATLANTIS_TERRAFORM_VERSION}"'
+      - run: terragrunt apply $PLANFILE
