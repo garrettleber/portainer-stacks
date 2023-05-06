@@ -20,6 +20,7 @@ services:
       #- --log-level=debug
       - --repo-config=/config/repos.yaml
     environment:
+      - ATLANTIS_TERRAFORM_VERSION=1.4.5
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
