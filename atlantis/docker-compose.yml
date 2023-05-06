@@ -1,0 +1,18 @@
+---
+version: "3.7"
+services:
+  atlantis:
+    image: flaconi/atlantis-terragrunt:0.23.5-1.4.5-0.45.4
+    container_name: atlantis
+    restart: unless-stopped
+    ports:
+      - "4141:4141"
+    command:
+      - server
+      - --gitlab-user=${ATLANTIS_GITLAB_USER}
+      - --gitlab-token=${ATLANTIS_GITLAB_TOKEN}
+      - --gitlab-webhook-secret=${ATLANTIS_GITLAB_WEBHOOK_SECRET}
+      #- --repo-allowlist=${ATLANTIS_REPO_ALLOWLIST}
+      - --atlantis-url=${ATLANTIS_ATLANTIS_URL}
+      - --log-level=debug
+      #- --repo-config-json=/config/repo-config.json
